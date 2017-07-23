@@ -14,7 +14,7 @@ add_theme_support('post-thumbnails');
 
 add_theme_support('post-thumbnails');
 /*  Custom post Data                */
-
+function awesome_post_type(){
 register_post_type(
 'eshoper_slider',
 array(
@@ -30,6 +30,26 @@ array(
 )
 
 );
+
+register_post_type(
+'anotherslider',
+array(
+'labels'=> array(
+'name' => 'Sliders',
+'singular_name' => 'Slider'
+),
+'public' =>  true,
+'show_in_menu' => true,
+'supports' => array(
+'title','editor','excerpt','custom-fields','thumbnail'
+)
+)
+
+);
+
+
+}
+add_action('init','awesome_post_type');
 
 function awesome_script_enqueue(){
 //=================================Add CSS and JS File==============================================//
