@@ -30,7 +30,7 @@ array(
 )
 
 );
-
+//Another post type
 register_post_type(
 'anotherslider',
 array(
